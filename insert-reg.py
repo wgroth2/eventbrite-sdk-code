@@ -1,7 +1,7 @@
 # SDK here: https://github.com/eventbrite/eventbrite-sdk-python
 # API Reference: https://www.eventbrite.com/platform/api
 #
-# Author: Bill.roth@secondfront.com
+# Author: Bill.roth@secondfront.com, bill.roth@gmail.com
 #
 from eventbrite import Eventbrite
 import mariadb
@@ -45,7 +45,7 @@ def insert_attendees():
     # https://mariadb.com/resources/blog/how-to-connect-python-programs-to-mariadb/
     #
     try: 
-        cur.execute(f"INSERT INTO `metrics` (`ts`, `ID`, `val`, `campaign`) VALUES (current_timestamp(), NULL, '{num_attendees}', 'offset23-registrants');")
+        cur.execute(f"INSERT INTO `metrics` (`ts`, `ID`, `val`, `campaign`) VALUES (current_timestamp(), NULL, '{num_attendees}', 'campsign-tag');")
     except mariadb.Error as e: 
         print(f"Error: {e}")
         sys.exit(1)
